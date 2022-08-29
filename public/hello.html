@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-storage.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyDegzcOZjxNyw-GY8ATv97gEjHaKFs6HEQ",
+        authDomain: "semi-project-7a423.firebaseapp.com",
+        databaseURL: "https://semi-project-7a423-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "semi-project-7a423",
+        storageBucket: "semi-project-7a423.appspot.com",
+        messagingSenderId: "660861448017",
+        appId: "1:660861448017:web:640334735d21f4977bed70"
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script>
+      const db = firebase.firestore();
+      db.collection("classes").get().then((snapshot) => {
+        //console.log(snapshot); snapshot is array
+        snapshot.forEach((item)=>{
+          console.log(item.data());
+        })
+      })
+    </script>
+    Hello
+  </body>
+</html>
